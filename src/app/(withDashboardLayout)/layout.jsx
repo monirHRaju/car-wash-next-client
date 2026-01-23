@@ -3,9 +3,11 @@ import React from 'react';
 
 const layout = ({ children }) => {
     return (
-        <div className='w-full mx-auto'>
+        <div className='flex gap-4'>
             <DashboardSidebar></DashboardSidebar>
-            {children}
+            <div className='ml-50 p-2 md:p-4'>
+                {children}
+            </div>
         </div>
     );
 };

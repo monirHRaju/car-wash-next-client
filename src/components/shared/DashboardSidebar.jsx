@@ -1,14 +1,28 @@
 import Link from 'next/link';
 import React from 'react';
+import { MdOutlineDesignServices } from "react-icons/md";
+import { CiMoneyBill } from "react-icons/ci";
+import Image from 'next/image';
 
 const DashboardSidebar = () => {
     return (
-        <div className='w-50 '>
-            <h1 className='font-bold'>CarWash</h1>
+        <div className='w-50 bg-purple-200 h-screen text-black fixed top-0 left-0'>
+            <h1 className='p-3 font-bold text-2xl text-center'>CarWash</h1>
+            <Image alt='car wash logo' src="@/assets/carwash-logo.webp" width={60} height={60} />
+            <div className='flex flex-col'>
+                <div className='flex gap-2 items-center hover:bg-purple-400 p-2'>
+                    <MdOutlineDesignServices />
+                    <Link href={'/services'} className=''>Services</Link>
+                </div>
+                
+                <div className='flex gap-2 items-center hover:bg-purple-400 p-2'>
+                    <CiMoneyBill />
+                    <Link href={'/payments'} className=''>Payments</Link>
+                </div>
 
-            <ul>
-                <li className='bg-amber-200 font-semibold'><Link>Services</Link></li>
-            </ul>
+
+             
+            </div>
         </div>
     );
 };
