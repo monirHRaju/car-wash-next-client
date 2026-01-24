@@ -8,7 +8,7 @@ const DashboardSidebar = () => {
     return (
         <div className='w-50 bg-purple-200 h-screen text-black fixed top-0 left-0'>
             <h1 className='p-3 font-bold text-2xl text-center'>CarWash</h1>
-            <Image alt='car wash logo' src="@/assets/carwash-logo.webp" width={60} height={60} />
+            <Image alt='car wash logo' src="https://i.ibb.co.com/0psLqp2X/carwash-logo.webp" className='mx-auto' width={60} height={60} />
             <div className='flex flex-col'>
                 <div className='flex gap-2 items-center hover:bg-purple-400 p-2'>
                     <MdOutlineDesignServices />
