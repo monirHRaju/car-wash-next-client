@@ -1,11 +1,14 @@
+import Container from '@/components/shared/Container';
 import React from 'react';
 
-const ServiceDetails = async () => {
-    const resParams = await useParams;
+const ServiceDetails = async ({params}) => {
+    const resParams = await params;
     console.log(resParams);
     return (
-        <div>
-            Service Details Page for 
+        <div className="py-7">
+            <Container>
+                <h1 className="text-3xl font-bold">Service Details for {resParams.slug}</h1>
+            </Container>
         </div>
     );
 };
