@@ -4,6 +4,11 @@ import ServiceCard from './_components/ServiceCard';
 
 const getAllServices = async () => {
         const res = await fetch('https://car-washing-system-cleanify-server.vercel.app/api/v1/services')
+        await new Promise((resolve) => 
+            setTimeout(() => {
+                resolve()
+            }), 3000
+        )
         const data = await res.json()
         return data
     }
