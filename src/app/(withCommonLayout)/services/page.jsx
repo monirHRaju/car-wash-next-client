@@ -1,6 +1,7 @@
 import Container from '@/components/shared/Container';
 import React from 'react';
 import ServiceCard from './_components/ServiceCard';
+import SearchQuery from './_components/SearchQuery';
 
 const getAllServices = async () => {
         const res = await fetch('https://car-washing-system-cleanify-server.vercel.app/api/v1/services')
@@ -23,6 +24,7 @@ const Services = async () => {
         <div className='py-7'>
             <Container>
                 <h1 className='text-4xl font-bold mb-6'>Services</h1>
+                <SearchQuery/>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                     {
                         services?.data?.map(service => {
