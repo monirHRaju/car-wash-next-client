@@ -1,7 +1,6 @@
 // app/login/page.jsx   or   components/LoginPage.jsx
 
 'use client';
-
 import { use, useState } from 'react';
 import Link from 'next/link';
 import { FcGoogle } from 'react-icons/fc';
@@ -139,7 +138,7 @@ const LoginPage = () => {
           {/* Register link */}
           <div className="text-center mt-8">
             <p className="text-base-content/70">
-              Don't have an account?{' '}
+              Do not have an account?{' '}
               <Link href="/register" className="link link-primary font-medium">
                 Create one now
               </Link>

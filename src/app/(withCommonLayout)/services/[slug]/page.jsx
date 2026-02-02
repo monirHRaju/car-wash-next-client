@@ -3,6 +3,7 @@ import Container from "@/components/shared/Container";
 import Image from "next/image";
 import Link from "next/link";
 import { FaClock, FaCheckCircle, FaMoneyBillWave, FaArrowRight } from "react-icons/fa";
+import BookingBtn from "../_components/BookingBtn";
 
 const getSingleServices = async (id) => {
   const res = await fetch(`https://car-washing-system-cleanify-server.vercel.app/api/v1/services/${id}`, {
@@ -88,13 +89,7 @@ const ServiceDetails = async ({ params }) => {
             </div>
 
             <div className="pt-4">
-              <Link
-                href="/booking"
-                className="btn btn-primary btn-lg rounded-full px-10 shadow-lg hover:shadow-2xl transition-all"
-              >
-                Book This Service Now
-                <FaArrowRight className="ml-2" />
-              </Link>
+              <BookingBtn service={service}/>
             </div>
           </div>
 
@@ -108,7 +103,7 @@ const ServiceDetails = async ({ params }) => {
               className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
           </div>
         </div>
 
@@ -117,7 +112,7 @@ const ServiceDetails = async ({ params }) => {
           {/* Main Description & Features */}
           <div className="lg:col-span-2 space-y-10">
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl font-bold mb-6">What’s Included</h2>
+              <h2 className="text-3xl font-bold mb-6">Whats Included</h2>
               <p className="text-base-content/80 leading-relaxed text-lg">
                 {plainDescription}
               </p>
