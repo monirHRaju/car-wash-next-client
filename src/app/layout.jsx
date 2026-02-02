@@ -1,5 +1,6 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import Providers from "@/lib/providers";
 
 
 const roboto = Roboto({
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${roboto.className}`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

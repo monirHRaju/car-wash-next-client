@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+import React, { use } from "react";
 import Container from "./Container";
 import NavLinks from "./NavLinks";
 import Link from "next/link";
 import Logo from "./Logo";
+import { UserContext } from "@/context/user.context";
 
 const Navbar = () => {
+  const {user} = use(UserContext)
+
   return (
     <div className="bg-primary text-primary-content">
       <Container>
@@ -36,7 +40,16 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <Link href={'/login'} className="btn btn-white btn-outline">Login</Link>
+            {
+              user ? (
+                <Link href="/dashboard" className="btn btn-outline">
+                  Dashboard
+                </Link>
+              ) : (
+                <Link href={'/login'} className="btn btn-white btn-outline">Login</Link>
+              ) 
+            }
+
           </div>
         </div>
       </Container>
