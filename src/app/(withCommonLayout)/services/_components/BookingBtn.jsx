@@ -1,9 +1,9 @@
 "use client";
 import { BookingContext } from "@/context/booking.context";
-import React, { use } from "react";
+import React, { use, useContext } from "react";
 
 const BookingBtn = ({ service }) => {
-  const { bookings, addBooking, removeBooking } = use(BookingContext);
+  const { bookings, addBooking, removeBooking } = useContext(BookingContext);
   console.log("bookings in btn:", bookings);
   const isAlreadyBooking = bookings?.find((b) => b?._id === service?._id);
 
